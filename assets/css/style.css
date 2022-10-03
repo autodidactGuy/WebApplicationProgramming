@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+body{
+    background:url("../images/cover.png");
+    background-color: #BEBFC1;
+    font-family: 'Crete Round', serif;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: fill;
+    padding-left:27%;
+    padding-right:25%;
+    padding-top:10%;
+}
+
+.profilePhoto{
+    border-radius:50%;
+    width:200px;
+    height:auto;
+    border:7px solid #000;
+}
+
+.bottomFixed{
+    position:absolute;
+    bottom:0;
+}
+
+a{
+    color:#000;
+}
