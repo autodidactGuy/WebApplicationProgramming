@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body{
+    background-color: #BEBFC1;
+    font-family: 'Open Sans', sans-serif;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding:0;
+    padding-bottom:200px;
+}
+
+body > section{
+    padding:20px;
+}
+
+.profilePhoto{
+    border-radius:50%;
+    width:200px;
+    height:auto;
+    border:7px solid #000;
+}
+
+a{
+    color:#000;
+}
+h1{
+    font-size:30px;
+}
+h2{
+    font-size: 25px;
+}
+p:first-letter {
+    font-size: 1.5em;
+    
+  }
+  ol{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  ol li{
+    font-weight: bold;
+  }
+ol li a{
+    color:#ac1111;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+ol li a:hover{
+    color:#ac1111;
+    text-decoration: underline;
+}
+
+ol li dl dt{
+    color:yellow;
+    font-weight: bold;
+}
+ol li dl dd{
+    font-weight: normal;
+    color:#0F0F0F;
+}
+.row{
+    width:100%;
+    display:flex;
+}
+.col{
+    width:100%;
+    text-align: center;
+
+}
+
+img{
+    border:5px solid #000;
+}
+
+footer{
+    color:#fff;
+    background-color: #000;
+    position: fixed;
+    bottom:0;
+    left:0;
+    padding:20px;
+    width:100%;
+    text-align: center;
+}
+
+footer a{
+    color:#fff;
+    
+}
