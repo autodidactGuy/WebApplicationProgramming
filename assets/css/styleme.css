@@ -70,11 +70,13 @@ ol li dl dd{
     text-align: center;
 
 }
-
-img{
-    border:5px solid #000;
+.moodImage{
     width:100%;
     height:auto;
+}
+img{
+    border:5px solid #000;
+   
 }
 
 footer{
