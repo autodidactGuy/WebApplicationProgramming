@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - W1D5</title>
+    <script>
+        function myFunctionTest(expected, found) {
+            if (expected === found) {
+                return "TEST SUCCEEDED";
+            } 
+            else if(JSON.stringify(expected)==JSON.stringify(found))
+            {
+                return "TEST SUCCEEDED";
+            }
+            else {
+                return "TEST FAILED.  Expected " + expected + " found " + found;
+            }
+        }
+        function max(a, b) {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            };
+        }
+        console.log("Expected output of max(20,10) is 20  " + myFunctionTest(20, max(20, 10)));
+
+        function maxOfThree(a, b, c) {
+            return max(max(a, b), c);
+        }
+
+        console.log("Expected output of maxOfThree(5,4,44) is 44  " + myFunctionTest(44, maxOfThree(5, 4, 44)));
+        console.log("Expected output of maxOfThree(55,4,44) is 55  " + myFunctionTest(55, maxOfThree(55, 4, 44)));
+
+        function isVowel(c)
+        {
+            const vowels = ['a','e','i','o','u'];
+            if(c.length>0){
+                if(vowels.includes(c[0])){
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log("Expected output of isVowel('a') is true  " + myFunctionTest(true, isVowel('a')));
+        console.log("Expected output of isVowel('d') is false  " + myFunctionTest(false, isVowel('d')));
+        console.log("Expected output of isVowel('apple') is true  " + myFunctionTest(true, isVowel('apple')));
+        console.log("Expected output of isVowel('hello') is false  " + myFunctionTest(false, isVowel('hello')));
+
+        function sum(nums)
+        {
+            return nums.reduce(function(total,n){
+                return total+n;
+            }, 0);
+        }
+        console.log("Expected output of sum([1,2,3,4]) is 10  " + myFunctionTest(10, sum([1,2,3,4])));
+
+        function multiply(nums)
+        {
+            return nums.reduce(function(total,n){
+                return total*n;
+            }, 1);
+        }
+        console.log("Expected output of multiply([1,2,3,4]) is 24  " + myFunctionTest(24, multiply([1,2,3,4])));
+
+        function reverse(str)
+        {
+            return (str+"").split('').reverse().join('');
+        }
+        console.log("Expected output of reverse(\"jag testar\") is \"ratset gaj\"  " + myFunctionTest("ratset gaj", reverse("jag testar")));
+
+        function findLongestWord(words)
+        {
+            return words.reduce(function(max,w){
+                return (max.length<w.length)?w:max;
+            }, "");
+        }
+        console.log("Expected output of findLongestWord(['hello','world','helloworld']) is 'helloworld' " + myFunctionTest('helloworld', findLongestWord(['hello','world','helloworld'])));
+
+        function filterLongWords(words,i)
+        {
+            return words.filter(function(w){
+                return (w.length>=i)?true:false;
+            });
+        }
+        console.log("Expected output of filterLongWords(['wow','world','helloworld'],4) is ['world','helloworld'] " + myFunctionTest(["world","helloworld"], filterLongWords(['wow','world','helloworld'],4)));
+
+        document.writeln("Please open developer console to check all test cases!<br/><br/>");
+        
+        document.writeln("-------------------<br/>Below output is for modified jsFiddle as per requirements in assignment!<br/>");
+        const a = [1,3,5,3,3]; 
+        const b = a.map(function(elem, i, array) {
+        return elem * 10;
+        })
+        document.writeln(b.toString() + "<br/>");
+        const c = a.filter(function(elem, i, array){
+        return elem === 3;});
+        document.writeln(c.toString() + "<br/>");
+        const d = a.reduce(function(prevValue, elem, i, array){
+        return prevValue * elem;
+        });
+        document.writeln(d+ "<br/>");
+
+        const d2 = a.find(function(elem) {return elem > 1;}); //3
+        const d3 = a.findIndex(function(elem) {return elem > 1;}); //1
+        document.writeln(d2+ "<br/>");
+        document.writeln(d3);
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
