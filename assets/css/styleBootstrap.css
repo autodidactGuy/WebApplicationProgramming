@@ -44,6 +44,7 @@ nav ul{
 .columns > div{
     padding:15px;
     min-height:30vh;
+    padding-left: 15px!important;
 }
 
 .columns > div:nth-child(1){
