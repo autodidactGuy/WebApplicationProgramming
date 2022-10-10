@@ -10,7 +10,11 @@ body{
     margin:0;
     padding-bottom:300px;
 }
-
+.scrollMessage{
+    text-align: center;
+    color:#fff;
+    
+}
 section{
     padding-left:27%;
     padding-right:25%;
