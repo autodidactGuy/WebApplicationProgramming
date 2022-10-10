@@ -36,6 +36,7 @@ window.onload = function(){
         currentStatus=true;
         e.target.disabled=true;
         document.getElementById("stop").disabled=false;
+        document.getElementById("animation").disabled=true;
         currentFrame=0;
         currentSpeed=normalSpeed;
         if(isTurbo){
@@ -50,6 +51,7 @@ window.onload = function(){
         currentStatus=false;
         e.target.disabled=true;
         document.getElementById("start").disabled=false;
+        document.getElementById("animation").disabled=false;
         currentFrame=0;
         document.getElementById("text-area").value="";
     }
