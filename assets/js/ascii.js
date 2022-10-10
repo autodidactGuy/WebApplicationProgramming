@@ -10,19 +10,12 @@ window.onload = function(){
     var animID,currentFrame=0,currentSpeed=250,isTurbo=false,currentAnimation="Blank",currentStatus=false,currentFontSize="Medium";
     const turboSpeed=50,normalSpeed=250;
     const FONTSIZE={"Tiny": 7,"Small":10,"Medium":12,"Large":16,"Extra Large":24,"XXL":32};
+    
     function play() {
         document.getElementById("text-area").value=anim[currentFrame];
         currentFrame++;                    
         if (currentFrame >= anim.length) {
-            if(!currentStatus){
-                clearInterval(animID);
-            }
-        }
-        else{
             currentFrame=0;
-            if(!currentStatus){
-                clearInterval(animID);
-            }
         }
     }
     
@@ -40,7 +33,7 @@ window.onload = function(){
         }
         document.getElementById("text-area").style.fontSize=FONTSIZE[currentFontSize]+"pt";
         anim=getAnimation(currentAnimation);
-        animID=setInterval(play(),currentSpeed);
+        animID=setInterval(play,currentSpeed);
     }
 
     document.getElementById("stop").onclick=function(e){
