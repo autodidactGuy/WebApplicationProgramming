@@ -7,7 +7,7 @@ window.onload = function(){
     }
 
     var anim=getAnimation("Blank");
-    var currentFrame=0,isLoop=true,currentSpeed=250,isTurbo=false,currentAnimation="Blank",currentStatus=false;
+    var currentFrame=0,isLoop=true,currentSpeed=250,isTurbo=false,currentAnimation="Blank",currentStatus=false,currentFontSize="Medium";
     const turboSpeed=50,normalSpeed=250;
     const FONTSIZE={"Tiny": 7,"Small":10,"Medium":12,"Large":16,"Extra Large":24,"XXL":32};
     function nextFrame() {
@@ -42,7 +42,7 @@ window.onload = function(){
         if(isTurbo){
             currentSpeed=turboSpeed;
         }
-        document.getElementById("text-area").style.fontSize=FONTSIZE["Medium"]+"pt";
+        document.getElementById("text-area").style.fontSize=FONTSIZE[currentFontSize]+"pt";
         anim=getAnimation(currentAnimation);
         nextFrame();
     }
@@ -63,7 +63,8 @@ window.onload = function(){
     }
 
     document.getElementById("fontsize").onchange=function(e){
-        document.getElementById("text-area").style.fontSize=FONTSIZE[e.target.value]+"pt";
+        currentFontSize=e.target.value;
+        document.getElementById("text-area").style.fontSize=FONTSIZE[currentFontSize]+"pt";
     }
 
     document.getElementById("turbo").onchange=function(e){
