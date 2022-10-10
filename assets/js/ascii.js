@@ -7,27 +7,23 @@ window.onload = function(){
     }
 
     var anim=getAnimation("Blank");
-    var currentFrame=0,isLoop=true,currentSpeed=250,isTurbo=false,currentAnimation="Blank",currentStatus=false,currentFontSize="Medium";
+    var animID,currentFrame=0,currentSpeed=250,isTurbo=false,currentAnimation="Blank",currentStatus=false,currentFontSize="Medium";
     const turboSpeed=50,normalSpeed=250;
     const FONTSIZE={"Tiny": 7,"Small":10,"Medium":12,"Large":16,"Extra Large":24,"XXL":32};
-    function nextFrame() {
+    function play() {
         document.getElementById("text-area").value=anim[currentFrame];
-        setTimeout(function() {
-            currentFrame++;                    
-            if (currentFrame < anim.length) {
-                if(currentStatus){
-                    nextFrame();
-                }
+        currentFrame++;                    
+        if (currentFrame >= anim.length) {
+            if(!currentStatus){
+                clearInterval(animID);
             }
-            else{
-                if(isLoop){
-                    currentFrame=0;
-                    if(currentStatus){
-                        nextFrame();
-                    }
-                }
+        }
+        else{
+            currentFrame=0;
+            if(!currentStatus){
+                clearInterval(animID);
             }
-        }, currentSpeed)
+        }
     }
     
     
@@ -44,11 +40,12 @@ window.onload = function(){
         }
         document.getElementById("text-area").style.fontSize=FONTSIZE[currentFontSize]+"pt";
         anim=getAnimation(currentAnimation);
-        nextFrame();
+        animID=setInterval(play(),currentSpeed);
     }
 
     document.getElementById("stop").onclick=function(e){
         currentStatus=false;
+        clearInterval(animID);
         e.target.disabled=true;
         document.getElementById("start").disabled=false;
         document.getElementById("animation").disabled=false;
