@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+}
+.circle{
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    background-color: #eee;
+    position: absolute;
+    top:40vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display:inline-block;
+    opacity:1.0;
+    transition: all ease-in-out 0.3s;
+}
+.circle:hover{
+    opacity:0.5;
+}
+.controls{
+    position: fixed;
+    left:30px;
+    bottom:50px;
+    width:20vw;
+    text-align:left;
+}
+.controls label, .controls input{
+    display:block;
+}
+.controls input{
+    margin-bottom:10px;
+}
+.controls button{
+    background:#456C6F;
+    color:#fff;
+    border:none;
+    padding:10px 15px;
+}
+button{
+
+    cursor: pointer;
+}
