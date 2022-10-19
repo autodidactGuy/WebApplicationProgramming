@@ -1,16 +1,17 @@
 $(function(){
     $("#startBtn").click(function(){
 
-        $(".circle").each(function(){
-            $(this).remove();
-        });
+        $(".circles").remove();
 
         let numberCircles=$("#numberCircles").val(),width=$("#width").val(),growthAmount=$("#growthAmount").val(),growRate=$("#growRate").val();
+        let circles=$("<div>",{
+            "class":"circles"
+        });
         for(let i=0;i<numberCircles;i++)
         {
             let randomColor = Math.floor(Math.random()*16777215).toString(16);
             let randomPosition=Math.floor(Math.random() * 50);
-            $("body").prepend($("<div>", {
+            circles.append($("<div>", {
                 "class": "circle",
                 "css": {
                     "width":width,
@@ -23,6 +24,7 @@ $(function(){
                 }
              }));
         }
+        $("body").prepend(circles);
 
         setInterval(function(){
                 $(".circle").each(function(){
