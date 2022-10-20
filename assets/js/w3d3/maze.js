@@ -12,7 +12,8 @@ $(function(){
         if(isPlaying)
         {
             isPlaying=false;
-            $("#status").text("You are outside maze, Please start again!");
+            $(".boundary").addClass('fail');
+            $("#status").text("You lose!");
             resetGame();
         } 
      });
